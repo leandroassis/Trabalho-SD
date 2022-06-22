@@ -100,12 +100,13 @@ begin
 					when "011" =>	-- Apresenta o valor do nibble menos significativo do resultado computado pela ULA e vai para a próximo estado (na proxima borda de subida)
 						LEDS_MSB <= "0100";
 						LEDS_LSB <= ResultLSB;
-						estado <= "100";
-					when "100" =>	-- Apresenta o valor do nibble mais significativo do resultado computado pela ULA e vai para o estado inicial (na proxima borda de subida)
 						if iter = '1' then
-							LEDS_MSB <= "0101";
-							LEDS_LSB <= ResultMSB;
+							estado <= "100";
+						else estado <= "000";
 						end if;
+					when "100" =>	-- Apresenta o valor do nibble mais significativo do resultado computado pela ULA e vai para o estado inicial (na proxima borda de subida)
+						LEDS_MSB <= "0101";
+						LEDS_LSB <= ResultMSB;
 						estado <= "000";
 					when others =>	-- Caso esteja em um caso imprevisto, a saida fica em alta impedância e o estado em 000
 						LEDS_MSB <= "ZZZZ";

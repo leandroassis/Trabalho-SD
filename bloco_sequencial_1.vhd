@@ -23,8 +23,7 @@
 -- | Q1 | Q0 | Q1f | Q0f |
 -- | 0  | 0  | 0   | 1   |
 -- | 0  | 1  | 1   | 0   |
--- | 1  | 0  | 1   | 1   |
--- | 1  | 1  | 1   | 0   | -> Volta para escolher nova operação
+-- | 1  | 0  | 1   | 0   | -> Fica infinitamente podendo ser trocado o valor da op
 
 ----------------------------------------------------------------------------------
 
@@ -60,9 +59,6 @@ begin
 					estado <= "10";
 				when "10" =>	-- Se estiver no estado 10, salva o valor de SW na saida RegOP, não habilita a apresentação e vai para o proximo estado(quando ENTER for apertado dnv)
 					RegOP <= SW;
-					SHOW <= '0';
-					estado <= "11";
-				when "11" =>	-- Se estiver no estado 11, habilita a apresentação e volta para o estado 10 (quando ENTER for apertado dnv)
 					SHOW <= '1';
 					estado <= "10";
 				when others =>

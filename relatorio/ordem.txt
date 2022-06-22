@@ -1,0 +1,30 @@
+Relatório:
+
+Folha de capa
+Introdução
+	- Tabelas de operações
+	- Tabelas de OPcodes
+	- Placa de desenvolvimento e IDE utilizados
+Descrição:
+	- Bloco logico-aritmetico (explicar cada operação e como foi implementada em código, pq usamos 2 nibbles ao inves de acusar overflow?)
+	- Blocos de interface (apresentação e captação dos dados inseridos, explicando os blocos de código)
+	- Bloco divisor de clock (explicar a divisao de clock em hardware)
+Resultado:
+	- Diagrama de onda do funcionamento completo
+	- Diagrama de onda das operações da ULA (já coletados)
+	- Diagrama de blocos do sistema (talvez tirar pq vai dar mt trabalho K)
+
+Possiveis melhorias:
+- tornar mais eficientes em "espaço", usando barramentos de entrada e saída (4bits) para comunicar todos os 3 blocos (ou seja, tornar similar há uma arquitetura de processador)
+- mostrar qual valor esta sendo inserido no momento durante o circuito de interface
+- incluir o ite no bit mais significativo do result_msb, pois ele nunca é usado como resultado de entradas positivas de 4 bits em C2 (0000 até 0111, resultam no pior caso (multiplicação) em 0011 0001)
+
+Apendice:
+- código fonte .vhd e .ucf
+
+Slide para apresentação:
+	- Como funciona e pq fizemos assim?
+	- Código do unidade aritmetica (lógico é mt simples p perder tempo comentando), código dos dois blocos sequenciais
+	- Mostrar interconexão dos blocos (talvez um fluxograma ou o diagrama de blocos conectados)
+	- Apresentar ideias de melhorias e como fariamos elas
+	- Simular na prática com valores quaisquer
