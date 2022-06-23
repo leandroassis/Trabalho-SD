@@ -80,7 +80,7 @@ begin
 				RESULT_MSB <= std_logic_vector(SUB_MSB);
 				
 				if SUB_LSB(0) = '1' then			-- Caso o bit mais significativo do nibble LSB seja 1, faz-se a apresentação em 8 bits (usando o MSB) e, para isso, adapta os 4 bits MSB como bits de sinal, e os 4 bits LSB como magnetude em C2
-					RESULT_LSB(0) <= '0';
+					RESULT_LSB(0) <= '1';
 					RESULT_MSB <= "1111";
 					ITE <= '1';
 				else
