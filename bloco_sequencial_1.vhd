@@ -46,8 +46,10 @@ architecture Behavioral of bloco_sequencial_1 is
 begin
 	process(SW, ENTER, RESET, estado)
 	begin
-		if RESET = '1' then estado <= "00";		-- Se, e somente se, pressionar o botão de RESET a máquina volta para o estado inicial
-		elsif ENTER'event AND ENTER = '1' then	-- Caso o botão de enter seja apertado
+		if RESET = '1' then  -- Se, e somente se, pressionar o botão de RESET a máquina volta para o estado inicial
+			estado <= "00";	
+			SHOW <= '0';
+		elsif rising_edge(ENTER) then	-- Caso o botão de enter seja apertado
 			case estado is
 				when "00" =>	-- Se estiver no estado 00, salva o valor de SW na saida RegA, não habilita a apresentação e vai para o proximo estado(quando ENTER for apertado dnv)
 					RegA <= SW;
@@ -59,6 +61,9 @@ begin
 					estado <= "10";
 				when "10" =>	-- Se estiver no estado 10, salva o valor de SW na saida RegOP, não habilita a apresentação e vai para o proximo estado(quando ENTER for apertado dnv)
 					RegOP <= SW;
+					SHOW <= '0';
+					estado <= "11";
+				when "11" =>
 					SHOW <= '1';
 					estado <= "10";
 				when others =>

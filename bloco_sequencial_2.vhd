@@ -38,7 +38,7 @@ end bloco_sequencial_2;
 
 architecture Behavioral of bloco_sequencial_2 is
 	
-	signal A, B, OP, ResultLSB, ResultMSB : STD_LOGIC_VECTOR(0 to 3); -- Variaveis que vão armazenar o valor de A, B e OP durante o circuito de interface, e ResultLSB/MSB durante o bloco de operação
+	signal A, B, OP, ResultLSB, ResultMSB : STD_LOGIC_VECTOR(0 to 3) := "0000"; -- Variaveis que vão armazenar o valor de A, B e OP durante o circuito de interface, e ResultLSB/MSB durante o bloco de operação
 	signal show_enable, iter, clock : STD_LOGIC; -- Variaveis que vão armazenar se a apresentação dos valores esta habilitada, se é necessário mostrar o nibble mais significativo, e o clock dividido
 	signal estado : STD_LOGIC_VECTOR(0 to 2) := "000"; -- Variavel que armazena o estado atual dessa maquina de estado 
 
@@ -76,7 +76,7 @@ begin
 	
 	DIVISOR_DE_CLOCK : fonte_de_clock port map(CLOCK_INT, RESET_placa, show_enable, clock); -- E o divisor de clock
 	
-	process(A, B, OP, ResultLSB, ResultMSB, iter, show_enable, estado, clock) -- Que vão conectados com o "bloco" gerado no interior desse processo
+	process(RESET_placa, A, B, OP, ResultLSB, ResultMSB, iter, show_enable, estado, clock) -- Que vão conectados com o "bloco" gerado no interior desse processo
 	begin
 		if RESET_placa = '1' then
 			estado <= "000";

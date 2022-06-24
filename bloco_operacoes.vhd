@@ -124,8 +124,8 @@ begin
 				RESULT_MSB <= "0000";
 				ITE <= '0';
 			when others =>																			-- Operação inválida ou nenhuma operação, saida em alta impedância
-				RESULT_LSB <= "ZZZZ";
-				RESULT_MSB <= "ZZZZ";
+				RESULT_LSB <= "0000";
+				RESULT_MSB <= "0000";
 				ITE <= '0';
 			-- Fim das Operações Lógicas
 		end case;

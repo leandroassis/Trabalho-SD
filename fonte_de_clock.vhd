@@ -29,7 +29,7 @@ architecture Behavioral of fonte_de_clock is
 	
 begin
 	
-	process(CLOCK_IN, RESET)
+	process(CLOCK_IN, RESET, ENABLE)
 	begin
 		if RESET = '1' then	-- Caso o RESET seja apertado, o contador é resetado (afim de evitar falta de sincronismo na apresentação)
 			aux <= '0';
