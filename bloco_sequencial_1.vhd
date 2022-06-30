@@ -15,8 +15,7 @@
 -- | Q1 | Q0 |   Operação   |
 -- | 0  | 0  |   Salva RA   |
 -- | 0  | 1  |   Salva RB   |
--- | 1  | 0  |Salva OP_CODE |
--- | 1  | 1  |   Apresenta  |
+-- | 1  | 0  |Salva OP_CODE e Apresenta  |
 
 -- Tabela do circuito sequencial
 
@@ -61,9 +60,6 @@ begin
 					estado <= "10";
 				when "10" =>	-- Se estiver no estado 10, salva o valor de SW na saida RegOP, não habilita a apresentação e vai para o proximo estado(quando ENTER for apertado dnv)
 					RegOP <= SW;
-					SHOW <= '0';
-					estado <= "11";
-				when "11" =>
 					SHOW <= '1';
 					estado <= "10";
 				when others =>

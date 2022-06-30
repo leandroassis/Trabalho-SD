@@ -12,7 +12,6 @@ Descrição:
 Resultado:
 	- Diagrama de onda do funcionamento completo
 	- Diagrama de onda das operações da ULA (já coletados)
-	- Diagrama de blocos do sistema (talvez tirar pq vai dar mt trabalho K)
 
 Possiveis melhorias:
 - tornar mais eficientes em "espaço", usando barramentos de entrada e saída (4bits) para comunicar todos os 3 blocos (ou seja, tornar similar há uma arquitetura de processador)
