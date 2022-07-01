@@ -93,7 +93,7 @@ begin
 						LEDS_MSB <= "0010";
 						LEDS_LSB <= B;
 						estado <= "010";
-					when "010" =>	-- Apresenta o valor de B e vai para a próximo estado (na proxima borda de subida)
+					when "010" =>	-- Apresenta o valor de OPCODE e vai para a próximo estado (na proxima borda de subida)
 						LEDS_MSB <= "0011";
 						LEDS_LSB <= OP;
 						estado <= "011";
